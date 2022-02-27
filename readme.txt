@@ -12,6 +12,8 @@ prečo ste použili daný farebný model a nie iný, ...).
 Použiť môžete: knižnicu OpenCV (alebo iné voľne dostupné knižnice), internetové
 zdroje, skriptá a učebnice.
 Programovacie prostredia: Microsoft Visual Studio, Android Studio, Matlab,...
+
+
 Úloha 2 (10 bodov):
 Naprogramujte Houghovu transformáciu na detekciu čiar, pričom ako vstup použijete
 obrázok vo formáte .bmp alebo . jpg.
