@@ -42,7 +42,7 @@ def draw_line(rho,theta, colored_image):
     cv2.line(colored_image,(x1,y1),(x2,y2),(0,0,255),2)
     return colored_image
 
-img = cv2.imread(r'C:\Users\janik\Desktop\FEI_STU\Ing\2.semester\PVSO\projekty\PVSO\Uloha2\sudoka.jpg')
+img = cv2.imread(r'sudoka.jpg')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 edges = cv2.Canny(gray, 50, 150, apertureSize=3)
 
