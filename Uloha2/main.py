@@ -4,29 +4,17 @@ import math
 import cv2
 
 def hough_line(image):
-    #Get image dimensions
-    # y for rows and x for columns 
     n_y, n_x = image.shape
 
-    #Max diatance is diagonal one 
     Maxdist = int(np.round(np.sqrt(n_x**2 + n_y ** 2)))
-    # Theta in range from -90 to 90 degrees
     thetas = np.deg2rad(np.arange(-90, 90))
-    #Range of radius
     rs = np.linspace(-Maxdist, Maxdist, 2*Maxdist)
     accumulator = np.zeros((2 * Maxdist, len(thetas)))
     for y in range(n_y):
      for x in range(n_x):
-         # Check if it is an edge pixel
-         #  NB: y -> rows , x -> columns
           if image[y,x] > 0:
-              # Map edge pixel to hough space
               for k in range(len(thetas)):
-                # Calculate space parameter
                 r = x*np.cos(thetas[k]) + y * np.sin(thetas[k])
-                # Update the accumulator
-                # N.B: r has value -max to max
-                # map r to its idx 0 : 2*max
                 accumulator[int(r) + Maxdist,k] += 1
     return accumulator, thetas, rs
 
